@@ -1,0 +1,33 @@
+.phone-signin {
+  position : absolute;
+  top : 20%;
+  left: 37%;
+}
+
+.phone-content {
+  text-align: center;
+}
+
+body {
+  background-color: white;
+}
+
+.bni-image {
+  width:250px;
+  height:200px;
+  margin-left: 50px;
+}
+
+.PhoneInputInput {
+   width: 290px;
+   height: 36px;
+   font: inherit;
+   color: currentColor;
+   box-sizing: content-box;
+   animation-name: mui-auto-fill-cancel;
+   animation-duration: 10ms;
+}
+
+#recaptcha {
+  margin-left: 50px
+}
