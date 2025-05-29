@@ -2,8 +2,14 @@ import cors from "cors";
 import express from "express";
 import mysql from "mysql2";
 import dotenv from 'dotenv';
+import { fileURLToPath } from "url";
+import { dirname, join} from "path";
 
-dotenv.config({ path: "../.env"});
+// Gets absolute path of the current file and directory
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+dotenv.config({ path: join(__dirname, '../.env')});
 
 const app = express();
 const port = 3002;
