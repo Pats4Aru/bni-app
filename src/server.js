@@ -18,7 +18,7 @@ const connection = mysql.createConnection({
 });
 
 
-app.get("/members", (req, res) => {
+app.get("https://bni-app.onrender.com/members", (req, res) => {
    connection.query('SELECT * FROM members', (error, results, fields) => {
       if (error) {
          console.log("Error parsing SQL database" + error);
