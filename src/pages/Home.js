@@ -1,4 +1,4 @@
-import React from "react";
+
 import "../Home.css";
 import {RecaptchaVerifier, signInWithPhoneNumber} from "firebase/auth";
 import {useState, useEffect} from "react";
@@ -17,7 +17,7 @@ export const Home = () => {
   const [otp, setOtp] = useState("");
 
   useEffect(() => {
-        fetch('http://localhost:3002/members')
+        fetch('https://bni-app.onrender.com/members')
            .then((response) => {
               return response.json(); 
            })
@@ -30,16 +30,14 @@ export const Home = () => {
   const verifyPhone = () => {
       for (let i = 0; i < allMembers.length; i++) {
         const currentMember = allMembers[i];
-        const currentMemberPhone = currentMember["Phone Number"];
-        const phoneWithoutSpaces = phone.trim();
-        var newFormatPhone = phoneWithoutSpaces.substring(3);
-        const memberNumberTrimmed = currentMemberPhone.trim();
-        console.log(memberNumberTrimmed + "\n" + newFormatPhone)
-        if (memberNumberTrimmed === newFormatPhone) {
+        const currentMemberPhone = currentMember["Phone Number"].trim();
+        const newFormatPhone = phone.substring(2).trim();
+        console.log(currentMemberPhone + "\n" + newFormatPhone)
+        if (currentMemberPhone === newFormatPhone) {
           return true; // phone number is valid
         }
       }
-      alert("Invalid phone number");
+      alert("You are not a member of BNI. Please contact a BNI member to join.");
       return false; // phone number not valid
   }
 
