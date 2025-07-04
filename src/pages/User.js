@@ -20,10 +20,11 @@ export const User = () => {
                 </svg>
             </div>
             <h4>Name: {data.Name}</h4>
-            <h4>Occupation: {data.Occupation}</h4>
+            {data.Profession != undefined ? <h4>Profession: {data.Profession}</h4> : <></>}
             <h4>Company: {data.Company}</h4>
             <h4>Email: {data.Email}</h4>
-            <h4>Phone: {data["Phone Number"]}</h4>
+            <h4>Phone: {data.Phone}</h4>
+            {data.Referrer != undefined ? <h4>Referrer: {data.Referrer}</h4> : <></>}
         </div>
     )
 }

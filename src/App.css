@@ -10,8 +10,7 @@ table {
   font-family: sans-serif;
   font-size: 0.9em;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  margin-top: 200px;
-  padding: 30px
+  padding: 30px;
 }
 
 table tr th {
@@ -71,18 +70,67 @@ li {
   margin-left: 40px;
 }
 
-.meetText {
-  margin-top: -2350px;
-  text-align: center;
-  background-clip: text;
-  color: transparent;
-  background-image: linear-gradient( 177.5deg,  rgba(255,200,42,1) 28.3%, rgba(202,32,132,1) 79.8% );
-}
-
 .pageLink, .userLink {
   text-decoration: none;
   color: black;
+  margin-bottom: 50px;
+  position: relative;
+  top: 0px;
 }
 
+.logout-button {
+  position: relative;
+  left: 600px;
+  color:"black";
+  width:"85px";
+  height:"35px";
+  background-color:"#FF003F";
+}
 
+.pagination {
+  text-align: center;
+  position: relative;
+  left: -4%;
+}
+
+.pagination a{
+  color: black;
+  text-decoration: none;
+  padding: 8px 15px;
+  display: inline-block;
+}
+
+.pagination a.active{
+  background-color: lightgreen;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active){
+  background-color: lightseagreen;
+  border-radius: 5px;
+}
+
+.visitor-search {
+  position: relative;
+  top: 145px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 350px;
+  padding: 12px 18px;
+  border: 2px solid #0adea9;
+  border-radius: 25px;
+  font-size: 1.1em;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(57, 160, 202, 0.1);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: #f9f9f9;
+  color: #222;
+}
+
+.visitor-search:focus {
+  border-color: #d70447;
+  box-shadow: 0 4px 16px rgba(0, 152, 121, 0.15);
+  background: #fff;
+}
 

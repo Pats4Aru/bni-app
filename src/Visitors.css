@@ -1,0 +1,50 @@
+
+.meetText2 {
+  margin-top: -160px;
+  text-align: center;
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient( 177.5deg,  rgb(16, 185, 223) 28.3%, rgba(202,32,132,1) 79.8% );
+}
+
+table {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 400px;
+  font-family: sans-serif;
+  font-size: 0.9em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin-top: 200px;
+  padding: 30px
+}
+
+table tr th {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: center;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 12px 15px;
+  text-align: center;
+  color: black;
+}
+
+tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}

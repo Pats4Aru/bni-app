@@ -7,8 +7,6 @@ import {auth} from "../firebase/firebase_setup.js";
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 
-
-
 export const Home = () => {
 
   const [allMembers, setAllMembers] = useState([]);
@@ -17,7 +15,7 @@ export const Home = () => {
   const [otp, setOtp] = useState("");
 
   useEffect(() => {
-        fetch('https://bni-web-app.onrender.com/members')
+        fetch('http://localhost:3002/members')
            .then((response) => {
               return response.json(); 
            })
@@ -30,8 +28,8 @@ export const Home = () => {
   const verifyPhone = () => {
       for (let i = 0; i < allMembers.length; i++) {
         const currentMember = allMembers[i];
-        const currentMemberPhone = currentMember["Phone Number"].trim();
-        const newFormatPhone = phone.substring(2).trim();
+        const currentMemberPhone = currentMember["Phone"].trim();
+        const newFormatPhone = phone.substring(3).trim();
         console.log(currentMemberPhone + "\n" + newFormatPhone)
         if (currentMemberPhone === newFormatPhone) {
           return true; // phone number is valid
