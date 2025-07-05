@@ -13,7 +13,7 @@ const __dirname = dirname(__filename);
 
 dotenv.config({ path: join(__dirname, '../.env')});
 const uri = `mongodb+srv://arunavpm6:${process.env.MONGO_PASSWORD}@cluster0.7mp8khi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
-const OPEN_AI_API_KEY = process.env.OPEN_API_KEY;
+// const OPEN_AI_API_KEY = process.env.OPEN_API_KEY;
 
 const client = new MongoClient(uri, {
    useNewUrlParser: true,
