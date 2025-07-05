@@ -21,10 +21,10 @@ const client = new MongoClient(uri, {
    serverApi: ServerApiVersion.v1
 });
 
-const openai = new OpenAI({
+/*const openai = new OpenAI({
    apiKey: OPEN_AI_API_KEY,
 })
-
+*/
 await client.connect();
 console.log("MongoDB is connected");
 
