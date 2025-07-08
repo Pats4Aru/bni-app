@@ -88,7 +88,7 @@ const GenerateForm = ({resetToWebcam, imgURL}) => {
    const [referrer, setReferrer] = useState("")
 
    const sendFormData = async () => {
-      await fetch("http://localhost:3002/visitors", {
+      await fetch("https://bni-web-app.onrender.com/visitors", {
          method: 'POST',
          headers: {
             'Content-Type': "application/json"
@@ -149,7 +149,7 @@ const processImageData = async (url) => {
 }
 
 const parseOCRText = async (ocrText) => {
-   const relevantTextResponse = await fetch("http://localhost:3002/gpt", {
+   const relevantTextResponse = await fetch("https://bni-web-app.onrender.com/gpt", {
       method: 'POST',
       headers: {
          'Content-Type': "application/json"

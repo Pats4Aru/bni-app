@@ -48,7 +48,7 @@ function MembersTable() {
    }
 
    useEffect(() => {
-      fetch('http://localhost:3002/members', {
+      fetch('https://bni-web-app.onrender.com/members', {
          method: 'POST',
          headers: {
             'Content-Type': 'application/json'

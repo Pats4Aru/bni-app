@@ -10,7 +10,7 @@ export const Visitors = () => {
     const [searchKeyword, setSearchKeyword] = useState("");
 
     useEffect(() => {
-        fetch('http://localhost:3002/visitor-search', {
+        fetch('https://bni-web-app.onrender.com/visitor-search', {
             method: 'POST',
             headers: {
                 'Content-Type': "application/json"

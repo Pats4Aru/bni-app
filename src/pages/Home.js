@@ -15,7 +15,7 @@ export const Home = () => {
   const [otp, setOtp] = useState("");
 
   useEffect(() => {
-        fetch('http://localhost:3002/members')
+        fetch('https://bni-web-app.onrender.com/members')
            .then((response) => {
               return response.json(); 
            })
