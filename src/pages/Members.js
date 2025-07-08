@@ -17,7 +17,7 @@ function MembersTable() {
    const [currentMembers, setCurrentMembers] = useState([]);
    const [currentPage, setCurrentPage] = useState(1);
    const [startPage, setStartPage] = useState(1);
-   const [totalEntries, setTotalEntries] = useState(108);
+   const [totalEntries, setTotalEntries] = useState(109);
    const [searchKeyword, setSearchKeyword] = useState("");
    const entriesPerPage = 10;
    const [numPages, setNumPages] = useState(Math.ceil(totalEntries / entriesPerPage));

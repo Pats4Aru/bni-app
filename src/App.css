@@ -111,14 +111,14 @@ li {
   border-radius: 5px;
 }
 
-.visitor-search {
+.member-search {
   position: relative;
-  top: 145px;
+  top: 150px;
   left: 50%;
   transform: translateX(-50%);
   width: 350px;
   padding: 12px 18px;
-  border: 2px solid #0adea9;
+  border: 2px solid #0898d6;
   border-radius: 25px;
   font-size: 1.1em;
   outline: none;
@@ -128,8 +128,8 @@ li {
   color: #222;
 }
 
-.visitor-search:focus {
-  border-color: #d70447;
+.member-search:focus {
+  border-color: #0bffa5;
   box-shadow: 0 4px 16px rgba(0, 152, 121, 0.15);
   background: #fff;
 }

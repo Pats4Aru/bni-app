@@ -13,7 +13,7 @@ const __dirname = dirname(__filename);
 
 dotenv.config({ path: join(__dirname, '../.env')});
 const uri = `mongodb+srv://arunavpm6:${process.env.MONGO_PASSWORD}@cluster0.7mp8khi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
-// const OPEN_AI_API_KEY = process.env.OPEN_API_KEY;
+const OPEN_AI_API_KEY = process.env.OPEN_API_KEY;
 
 const client = new MongoClient(uri, {
    useNewUrlParser: true,
@@ -21,10 +21,10 @@ const client = new MongoClient(uri, {
    serverApi: ServerApiVersion.v1
 });
 
-/*const openai = new OpenAI({
+const openai = new OpenAI({
    apiKey: OPEN_AI_API_KEY,
 })
-*/
+
 await client.connect();
 console.log("MongoDB is connected");
 
@@ -117,12 +117,13 @@ app.post("/gpt", async (req, res) => {
       const response = await openai.responses.create({
          model: 'gpt-3.5-turbo',
          input: `Given this text: ${prompt}, can you extract the information in this format - name, company, phone-number, email
-         with no other words`,
+         with no other words. If the text body is empty output ,,,,`,
          max_output_tokens: 50,
       });
 
       const aiResponse = response.output[0].content[0].text;
-      console.log(aiResponse);
+      console.log("AIResponse: " + aiResponse);
+      res.json(aiResponse);
    }
    catch (error) {
       console.log("Error fetching to chat-gpt API", error);

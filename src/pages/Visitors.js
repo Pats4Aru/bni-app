@@ -38,7 +38,7 @@ export const Visitors = () => {
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Profession</th>
+                        <th>Company</th>
                         <th>Referrer</th>
                     </tr>
                 </thead>

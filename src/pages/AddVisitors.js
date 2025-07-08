@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar } from "../Components/Navbar.js"
 import Webcam from "react-webcam"
-import { useRef, useState } from "react"
+import { useRef, useState, useEffect } from "react"
 import { createWorker } from "tesseract.js"
 import "../AddVisitor.css"
 
@@ -69,12 +69,23 @@ export const AddVisitors = () => {
 
 const GenerateForm = ({resetToWebcam, imgURL}) => {
 
-   // const textData = processImageData(imgURL)
-   const [name, setName] = useState("Name");
-   const [company, setCompany] = useState("Company");
-   const [email, setEmail] = useState("Email");
-   const [phone, setPhone] = useState("Phone");
-   const [referrer, setReferrer] = useState("Referrer");
+   useEffect(() => {
+      const getFieldData = async () => {
+         const textData = await processImageData(imgURL)
+         setName(textData.name)
+         setCompany(textData.company)
+         setPhone(textData.phone)
+         setEmail(textData.email)
+      }
+      
+      getFieldData()
+   }, [])
+
+   const [name, setName] = useState("");
+   const [company, setCompany] = useState("");
+   const [email, setEmail] = useState("");
+   const [phone, setPhone] = useState("");
+   const [referrer, setReferrer] = useState("")
 
    const sendFormData = async () => {
       await fetch("http://localhost:3002/visitors", {
@@ -107,29 +118,34 @@ const GenerateForm = ({resetToWebcam, imgURL}) => {
                   <label>Phone:</label>
                   <input type="text" required class="form-input" value={phone} onChange={(e) => {setPhone(e.target.value)}}></input><br/>
                   <label>Referrer:</label>
-                  <input type="text" required class="form-input" onChange={(e) => {setReferrer(e.target.value)}}></input><br/>
+                  <input type="text" required class="form-input" value={referrer} onChange={(e) => {setReferrer(e.target.value)}}></input><br/>
                   <button class="form-button" onClick={sendFormData}>Submit</button>
                </div>
          </div>
    )
 }
 
-// purpose is to get text from image
 const processImageData = async (url) => {
-   const worker = await createWorker({
-      logger: m => console.log(m)
-   })
+   const worker = await createWorker({})
    
    const processWorker = async () => {
       await worker.loadLanguage('eng');
       await worker.initialize('eng');
-      const {data: { text } } = await worker.recognize("https://marketplace.canva.com/EAGLrR2e2H8/1/0/1600w/canva-blue-modern-business-card-PSng3mW2xTM.jpg");
-      console.log(text);
-      const relevantData = parseOCRText(text);
+      const {data: { text } } = await worker.recognize(url);
+      const relevantData = await parseOCRText(text);
+      const relevantDataTokens = relevantData.split(",")
+      const visitorDataObject = {
+         name: relevantDataTokens[0], 
+         company: relevantDataTokens[1], 
+         phone: relevantDataTokens[2],
+         email: relevantDataTokens[3],
+      }
       await worker.terminate();
+      console.log(visitorDataObject)
+      return visitorDataObject
    }
 
-   processWorker();
+   return processWorker();
 }
 
 const parseOCRText = async (ocrText) => {
@@ -142,6 +158,9 @@ const parseOCRText = async (ocrText) => {
          prompt: ocrText,
       }),
    })
+
+   const extractedText = await relevantTextResponse.json();
+   return extractedText
 }
 
 

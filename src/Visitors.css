@@ -48,3 +48,26 @@ tbody tr.active-row {
   font-weight: bold;
   color: #009879;
 }
+
+.visitor-search {
+  position: relative;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 350px;
+  padding: 12px 18px;
+  border: 2px solid #0adea9;
+  border-radius: 25px;
+  font-size: 1.1em;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(57, 160, 202, 0.1);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: #f9f9f9;
+  color: #222;
+}
+
+.visitor-search:focus {
+  border-color: #d70447;
+  box-shadow: 0 4px 16px rgba(0, 152, 121, 0.15);
+  background: #fff;
+}
