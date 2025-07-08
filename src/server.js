@@ -34,6 +34,10 @@ app.use(cors());
 app.use(express.json({limit: '100mb'}));
 console.log("server recieves request");
 
+app.get("/", (req, res) => {
+   res.send("BNI application is now running!")
+})
+
 app.get("/members", async (req, res) => {
    try {
       const db = client.db("BNI-USERS");
