@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import { Home } from '../pages/Home.js';
 import { Visitors } from "../pages/Visitors.js";
 import { Members } from "../pages/Members.js";
-import { User } from "..pages/User.js";
+import { User } from "../pages/User.js";
 import { AddVisitors } from "../pages/AddVisitors.js";
 
 function App() {
