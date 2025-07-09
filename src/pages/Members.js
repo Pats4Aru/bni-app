@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Navbar } from "../Navbar.js";
+import { Navbar } from "../Components/Navbar.js";
 import { useState, useEffect, useRef } from "react"; 
 
 export const Members = () => {
