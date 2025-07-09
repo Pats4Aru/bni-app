@@ -18,6 +18,7 @@ function App() {
             <Route path="/Members/user" element={<User/>}/>
             <Route path="/Visitors/user" element={<User/>}/>
             <Route path="/AddVisitors" element={<AddVisitors/>}/>
+            <Route path="*" element={<div>This Page doesen't exist</div>}/>
          </Routes>
       </Router>
    )
