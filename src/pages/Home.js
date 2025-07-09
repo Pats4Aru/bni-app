@@ -29,7 +29,7 @@ export const Home = () => {
       for (let i = 0; i < allMembers.length; i++) {
         const currentMember = allMembers[i];
         const currentMemberPhone = currentMember["Phone"].trim();
-        const newFormatPhone = phone.substring(2).trim();
+        const newFormatPhone = phone.substring(1).trim();
         console.log(currentMemberPhone + "\n" + newFormatPhone)
         if (currentMemberPhone === newFormatPhone) {
           return true; // phone number is valid
