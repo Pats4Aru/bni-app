@@ -30,7 +30,9 @@ console.log("MongoDB is connected");
 
 const app = express();
 const port = 3002;
-app.use(cors());
+app.use(cors({
+   origin: "https://bni-app.onrender.com"
+}));
 app.use(express.json({limit: '100mb'}));
 console.log("server recieves request");
 
