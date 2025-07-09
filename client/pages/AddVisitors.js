@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar } from "../Components/Navbar.js"
+import { Navbar } from "../Navbar.js"
 import Webcam from "react-webcam"
 import { useRef, useState, useEffect } from "react"
 import { createWorker } from "tesseract.js"
