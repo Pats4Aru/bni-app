@@ -29,7 +29,7 @@ export const Home = () => {
       for (let i = 0; i < allMembers.length; i++) {
         const currentMember = allMembers[i];
         const currentMemberPhone = currentMember["Phone"].trim();
-        const newFormatPhone = phone.substring(3).trim();
+        const newFormatPhone = phone.substring(2).trim();
         console.log(currentMemberPhone + "\n" + newFormatPhone)
         if (currentMemberPhone === newFormatPhone) {
           return true; // phone number is valid
@@ -60,7 +60,7 @@ export const Home = () => {
          setUser(result.user);
          window.location.href = "/Members"
       }).catch((error) => {
-         console.log("incorrect code");
+         alert("Invalid OTP code")
       })
   }
 
