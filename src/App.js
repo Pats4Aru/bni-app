@@ -1,11 +1,11 @@
 import React from "react";
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import { Home } from './pages/Home.js';
-import { Visitors } from "./pages/Visitors.js";
-import { Members } from "./pages/Members.js";
-import { User } from "./pages/User.js";
-import { AddVisitors } from "./pages/AddVisitors.js";
+import { Home } from '../client/pages/Home.js';
+import { Visitors } from "../client/pages/Visitors.js";
+import { Members } from "../client/pages/Members.js";
+import { User } from "../client/pages/User.js";
+import { AddVisitors } from "../client/pages/AddVisitors.js";
 
 function App() {
 
