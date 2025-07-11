@@ -32,7 +32,8 @@ export const Home = () => {
       for (let i = 0; i < allMembers.length; i++) {
         const currentMember = allMembers[i];
         const currentMemberPhone = currentMember["Phone"].trim();
-        const newFormatPhone = phone.substring(3).trim();
+        const newFormatPhone = process.env.NODE_ENV == "development" ? phone.substring(3).trim() :
+        phone.substring(2).trim();
         console.log(currentMemberPhone + "\n" + phone)
         if (currentMemberPhone === newFormatPhone) {
           return true; // phone number is valid
