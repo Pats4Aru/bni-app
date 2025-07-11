@@ -47,7 +47,7 @@ export const AddVisitors = () => {
       )
    }
 
-   const videoConstraints = {
+   const videoConstraintOptions = {
       facingMode: process.env.NODE_ENV === "production" ? {exact: "environment"} : "user"
    };
 
@@ -61,7 +61,7 @@ export const AddVisitors = () => {
                   screenshotFormat="image/jpeg"
                   width={1050}
                   class="webcam"
-                  videoConstraints={videoConstraints}
+                  videoConstraints={videoConstraintOptions}
                   />
                  <button id="take-photo-button" onClick={capture}>Take Photo</button>
                </div>

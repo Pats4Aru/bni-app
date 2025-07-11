@@ -127,10 +127,13 @@
 }
 
 .webcam {
-    position: relative;
-    top: 30px;
-    right: 500px;
-    height: 350px;
+  width: 95vw;
+  max-width: 400px;
+  height: auto;
+  margin: 72px auto 16px auto; /* 72px for navbar space */
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
 #take-photo-button {
@@ -142,16 +145,16 @@
   box-sizing: border-box;
   color: #FFFFFF;
   cursor: pointer;
-  display: inline-block;
+  display: block;
   font-family: din-round,sans-serif;
-  font-size: 15px;
+  font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: .8px;
   line-height: 20px;
-  margin: 0;
+  margin: 16px auto 0 auto;
   outline: none;
   overflow: visible;
-  padding: 13px 16px;
+  padding: 14px 0;
   text-align: center;
   text-transform: uppercase;
   touch-action: manipulation;
@@ -159,12 +162,12 @@
   transition: filter .2s;
   user-select: none;
   -webkit-user-select: none;
-  vertical-align: middle;
   white-space: nowrap;
-  width: 25%;
-  position: relative;
-  top: 70px;
-  left: -1200px;
+  width: 90vw;
+  max-width: 300px;
+  position: static;
+  top: unset;
+  left: unset;
 }
 #take-photo-button:after {
   background-clip: padding-box;

@@ -44,20 +44,24 @@ tbody tr.active-row {
 }
 
 .navbar {
-  background-color: #39a0ca;
   position: fixed;
   top: 0;
-  left: 270px;
-  right: 0;
-  height: 70px;
-  width: 700px;
+  left: 0;
+  width: 100vw;
+  height: 56px;
+  background: #1DA1F2;
+  color: white;
   display: flex;
   align-items: center;
-  box-shadow: 0 0 25px 0 black;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 1000;
+  font-size: 1.3rem;
 }
 
 .navbar * {
   display: inline;
+  font-size: 15px;
 }
 
 li {
