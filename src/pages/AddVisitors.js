@@ -5,7 +5,7 @@ import { useRef, useState, useEffect } from "react"
 import { createWorker } from "tesseract.js"
 import "../AddVisitor.css"
 
-const API_BASE_URL = process.env.NODE_ENV === "development" ? "http://localhost:3002" : "https://bni-app.onrender.com"
+const API_BASE_URL = process.env.NODE_ENV === "development" ? "http://localhost:3002" : "https://bni-web-app.onrender.com"
 
 export const AddVisitors = () => {
 

@@ -9,7 +9,7 @@ import PhoneInput from 'react-phone-number-input'
 
 export const Home = () => {
 
-  const API_BASE_URL = process.env.NODE_ENV === "development" ? "http://localhost:3002" : "https://bni-app.onrender.com"
+  const API_BASE_URL = process.env.NODE_ENV === "development" ? "http://localhost:3002" : "https://bni-web-app.onrender.com"
   const [allMembers, setAllMembers] = useState([]);
   const [phone, setPhone] = useState("");
   const [user, setUser] = useState(null)
