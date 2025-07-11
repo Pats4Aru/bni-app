@@ -14,6 +14,7 @@ export const Members = () => {
 
 function MembersTable() {  
 
+   const API_BASE_URL = process.env.NODE_ENV === "development" ? "http://localhost:3002" : "https://bni-app.onrender.com"
    const [currentMembers, setCurrentMembers] = useState([]);
    const [currentPage, setCurrentPage] = useState(1);
    const [startPage, setStartPage] = useState(1);
@@ -48,7 +49,7 @@ function MembersTable() {
    }
 
    useEffect(() => {
-      fetch('https://bni-web-app.onrender.com/members', {
+      fetch(`${API_BASE_URL}/members`, {
          method: 'POST',
          headers: {
             'Content-Type': 'application/json'

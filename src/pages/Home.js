@@ -9,13 +9,16 @@ import PhoneInput from 'react-phone-number-input'
 
 export const Home = () => {
 
+  const API_BASE_URL = process.env.NODE_ENV === "development" ? "http://localhost:3002" : "https://bni-app.onrender.com"
   const [allMembers, setAllMembers] = useState([]);
   const [phone, setPhone] = useState("");
   const [user, setUser] = useState(null)
   const [otp, setOtp] = useState("");
 
+  console.log(`${API_BASE_URL}` + "/members")
+
   useEffect(() => {
-        fetch('https://bni-web-app.onrender.com/members')
+        fetch(`${API_BASE_URL}/members`)
            .then((response) => {
               return response.json(); 
            })
@@ -29,7 +32,7 @@ export const Home = () => {
       for (let i = 0; i < allMembers.length; i++) {
         const currentMember = allMembers[i];
         const currentMemberPhone = currentMember["Phone"].trim();
-        const newFormatPhone = phone.substring(2).trim();
+        const newFormatPhone = phone.substring(3).trim();
         console.log(currentMemberPhone + "\n" + phone)
         if (currentMemberPhone === newFormatPhone) {
           return true; // phone number is valid
@@ -43,7 +46,6 @@ export const Home = () => {
       // only allow them to log in if they are a actual member in our database
       if (verifyPhone()) {
         window.RecaptchaVerifier = new RecaptchaVerifier(auth, "recaptcha", {})  
-            
         const appVerifier = window.RecaptchaVerifier;
         console.log(phone);
           signInWithPhoneNumber(auth, phone, appVerifier)

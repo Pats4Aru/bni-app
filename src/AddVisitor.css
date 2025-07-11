@@ -129,7 +129,8 @@
 .webcam {
     position: relative;
     top: 30px;
-    right: -80px;
+    right: 500px;
+    height: 350px;
 }
 
 #take-photo-button {
@@ -162,8 +163,8 @@
   white-space: nowrap;
   width: 25%;
   position: relative;
-  top: 45px;
-  left: 450px;
+  top: 70px;
+  left: -1200px;
 }
 #take-photo-button:after {
   background-clip: padding-box;

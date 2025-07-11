@@ -28,10 +28,14 @@ const openai = new OpenAI({
 await client.connect();
 console.log("MongoDB is connected");
 
+const corsOptions = {
+   origin: ["http://localhost:3000", "https://bni-app.onrender.com"]
+};
+
 const app = express();
 const port = 3002;
 app.use(cors({
-   origin: "https://bni-app.onrender.com"
+   origin: corsOptions
 }));
 app.use(express.json({limit: '100mb'}));
 console.log("server recieves request");

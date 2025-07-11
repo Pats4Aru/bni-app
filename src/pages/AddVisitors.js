@@ -5,6 +5,8 @@ import { useRef, useState, useEffect } from "react"
 import { createWorker } from "tesseract.js"
 import "../AddVisitor.css"
 
+const API_BASE_URL = process.env.NODE_ENV === "development" ? "http://localhost:3002" : "https://bni-app.onrender.com"
+
 export const AddVisitors = () => {
 
    const webcamRef = useRef(null)
@@ -45,6 +47,10 @@ export const AddVisitors = () => {
       )
    }
 
+   const videoConstraints = {
+      facingMode: process.env.NODE_ENV === "production" ? {exact: "environment"} : "user"
+   };
+
    return (
         <div>
             {showWebcam ? 
@@ -55,6 +61,7 @@ export const AddVisitors = () => {
                   screenshotFormat="image/jpeg"
                   width={1050}
                   class="webcam"
+                  videoConstraints={videoConstraints}
                   />
                  <button id="take-photo-button" onClick={capture}>Take Photo</button>
                </div>
@@ -68,7 +75,7 @@ export const AddVisitors = () => {
 }
 
 const GenerateForm = ({resetToWebcam, imgURL}) => {
-
+   
    useEffect(() => {
       const getFieldData = async () => {
          const textData = await processImageData(imgURL)
@@ -88,7 +95,7 @@ const GenerateForm = ({resetToWebcam, imgURL}) => {
    const [referrer, setReferrer] = useState("")
 
    const sendFormData = async () => {
-      await fetch("https://bni-web-app.onrender.com/visitors", {
+      await fetch(`${API_BASE_URL}/visitors`, {
          method: 'POST',
          headers: {
             'Content-Type': "application/json"
@@ -149,7 +156,7 @@ const processImageData = async (url) => {
 }
 
 const parseOCRText = async (ocrText) => {
-   const relevantTextResponse = await fetch("https://bni-web-app.onrender.com/gpt", {
+   const relevantTextResponse = await fetch(`${API_BASE_URL}/gpt`, {
       method: 'POST',
       headers: {
          'Content-Type': "application/json"
