@@ -49,11 +49,11 @@ tbody tr.active-row {
   left: 0;
   width: 100vw;
   height: 56px;
-  background: #1DA1F2;
+  background: #0cc0f2;
   color: white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 0 16px;
   z-index: 1000;
   font-size: 1.3rem;
@@ -72,7 +72,7 @@ li {
 .BNI {
   height: 70px;
   width: 100px;
-  margin-left: 40px;
+  margin-left: 10px;
 }
 
 .pageLink, .userLink {
@@ -87,10 +87,26 @@ li {
   position: relative;
   left: 50px;
   top: 0px;
-  color:"black";
-  width:"85px";
-  height:"35px";
-  background-color:"#FF003F";
+  color: #fff;
+  width: 100px;
+  height: 40px;
+  background-color: #FF003F;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(255,0,63,0.08);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  outline: none;
+  margin-left: 16px;
+}
+
+.logout-button:hover,
+.logout-button:focus {
+  background-color: #d60036;
+  box-shadow: 0 4px 16px rgba(255,0,63,0.15);
+  transform: translateY(-2px) scale(1.03);
 }
 
 .pagination {
