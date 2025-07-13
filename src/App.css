@@ -61,7 +61,7 @@ tbody tr.active-row {
 
 .navbar * {
   display: inline;
-  font-size: 15px;
+  font-size: 0.6rem;
 }
 
 li {
@@ -93,13 +93,13 @@ li {
   background-color: #FF003F;
   border: none;
   border-radius: 20px;
-  font-size: 1rem;
+  font-size: 0.5rem;
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(255,0,63,0.08);
   transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
   outline: none;
-  margin-left: 16px;
+  margin-left: -45px;
 }
 
 .logout-button:hover,
