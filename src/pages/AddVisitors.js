@@ -48,7 +48,7 @@ export const AddVisitors = () => {
    }
 
    const videoConstraintOptions = {
-      facingMode: {exact: "environment"} 
+      facingMode: process.env.NODE_ENV === "production" ? "environment" : "user"
    };
 
    return (
