@@ -6,7 +6,6 @@ export const Navbar = () => {
  
     return (
        <div class="navbar">
-          <img src="https://www.bni.com/wp-content/uploads/2020/04/BNI-Refresh.jpg" class="BNI"/>
           <ul class="pageList">
           {pages.map((page) =>
              <li><Link to={`/${page === "Add a Visitor" ? "AddVisitors" : page}`} 

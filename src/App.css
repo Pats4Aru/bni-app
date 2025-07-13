@@ -62,17 +62,12 @@ tbody tr.active-row {
 .navbar * {
   display: inline;
   font-size: 0.6rem;
+  left: -15%;
 }
 
 li {
   margin: 20px;
   color: black;
-}
-
-.BNI {
-  height: 70px;
-  width: 100px;
-  margin-left: 10px;
 }
 
 .pageLink, .userLink {
@@ -99,7 +94,7 @@ li {
   box-shadow: 0 2px 8px rgba(255,0,63,0.08);
   transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
   outline: none;
-  margin-left: -45px;
+  margin-left: -85px;
 }
 
 .logout-button:hover,
