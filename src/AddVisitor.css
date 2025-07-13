@@ -2,128 +2,79 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 2000;
 }
 
 .popup-content {
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    position: relative;
-    width: 35%;
-    height: 40%;
+  background: white;
+  padding: 16px 8px;
+  border-radius: 14px;
+  width: 92vw;
+  max-width: 380px;
+  max-height: 80vh;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.no-button, .yes-button {
+  width: 90%;
+  max-width: 220px;
+  margin: 8px 0;
+  padding: 12px 0;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  display: block;
+  position: static;
 }
 
 .no-button {
-    position: relative;
-    cursor: pointer;
-    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
-    appearance: none;
-    border: 0;
-    border-radius: 6px;
-    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
-    box-sizing: border-box;
-    display: inline-flex;
-    font-family: "JetBrains Mono",monospace;
-    height: 25px;
-    color: white;
-    justify-content: center;
-    line-height: 1;
-    list-style: 1;
-    overflow: hidden;
-    padding-left: 16px;
-    padding-right: 16px;
-    text-align: left;
-    text-decoration: none;
-    transition: box-shadow .15s,transform .15s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    will-change: box-shadow,transform;
-    font-size: 18px;
-    top: 25px;
-    right: -20px;
-}
-
-.no-button:focus {
-  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-}
-
-.no-button:hover {
-  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-  transform: translateY(-2px);
-}
-
-.no-button:active {
-  box-shadow: #3c4fe0 0 3px 7px inset;
-  transform: translateY(2px);
+  background: #f3f3f3;
+  color: #d60036;
 }
 
 .yes-button {
-    position: relative;
-    right: 110px;
-    top: 25px;
-    width: 50px;
-    cursor: pointer;
-    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
-    appearance: none;
-    border: 0;
-    border-radius: 6px;
-    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
-    box-sizing: border-box;
-    display: inline-flex;
-    font-family: "JetBrains Mono",monospace;
-    height: 25px;
-    color: white;
-    justify-content: center;
-    line-height: 1;
-    list-style: 1;
-    overflow: hidden;
-    padding-left: 16px;
-    padding-right: 16px;
-    text-align: left;
-    text-decoration: none;
-    transition: box-shadow .15s,transform .15s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    will-change: box-shadow,transform;
-    font-size: 18px;
+  background: #0cc0f2;
+  color: #fff;
 }
 
-.yes-button:focus {
-  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-}
-
-.yes-button:hover {
-  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-  transform: translateY(-2px);
-}
-
-.yes-button:active {
-  box-shadow: #3c4fe0 0 3px 7px inset;
-  transform: translateY(2px);
+@media (max-width: 400px) {
+  .popup-content {
+    width: 98vw;
+    max-width: 98vw;
+    padding: 8px 2px;
+  }
+  #photo-image {
+    max-width: 95vw;
+    max-height: 28vh;
+  }
 }
 
 #photo-image {
-    height: 160px;
-    width: 220px;
-    position: relative;
-    right: -110px;
-    top: -10px;
+  width: 100%;
+  max-width: 320px;
+  max-height: 36vh;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 16px;  
 }
 
 #image-verify {
-    position: relative;
-    top: -10px;
-    right: -20px;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  text-align: center;
 }
 
 .webcam {
@@ -211,31 +162,35 @@
 
 .form-container {
   position: relative;
-  width: 900px;
-  height: 700px;
+  width: 95vw;
+  max-width: 400px;
+  min-height: 420px;
   border-radius: 20px;
-  padding: 40px;
+  padding: 24px 10px 16px 10px;
   box-sizing: border-box;
   background: #ecf0f3;
-  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
-  left: 180px;
-  top: 50px;
+  box-shadow: 8px 8px 16px #cbced1, -8px -8px 16px white;
+  margin: 64px auto 24px auto; /* space for navbar and bottom */
+  left: 0;
+  top: 0;
 }
 
 .form-title {
-  margin-top: 10px;
+  margin-top: 0;
   font-weight: 900;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   color: #1DA1F2;
   letter-spacing: 1px;
-  position: relative;
-  left: 300px;
+  position: static;
+  text-align: center;
 }
 
 .inputs {
   text-align: left;
-  margin-top: 30px;
+  margin-top: 18px;
+  width: 100%;
 }
+
 
 label, .form-input, .form-button {
   display: block;
@@ -248,6 +203,7 @@ label, .form-input, .form-button {
 
 label {
   margin-bottom: 4px;
+  font-size: 1rem;
 }
 
 .form-input:nth-of-type(2) {
@@ -260,28 +216,50 @@ label {
 
 .form-input {
   background: #ecf0f3;
-  padding: 10px;
-  padding-left: 20px;
-  height: 50px;
-  font-size: 14px;
+  padding: 10px 20px;
+  height: 44px;
+  font-size: 1rem;
   border-radius: 50px;
-  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+  box-shadow: inset 4px 4px 8px #cbced1, inset -4px -4px 8px white;
+  margin-bottom: 14px;
 }
 
 .form-button {
   color: white;
-  margin-top: 20px;
+  margin-top: 16px;
   background: #1DA1F2;
   height: 40px;
   border-radius: 20px;
   cursor: pointer;
   font-weight: 900;
-  box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
-  transition: 0.5s;
+  box-shadow: 4px 4px 8px #cbced1, -4px -4px 8px white;
+  transition: 0.3s;
+  font-size: 1rem;
 }
 
 .form-button:hover {
   box-shadow: none;
+}
+
+@media (max-width: 400px) {
+  .form-container {
+    width: 99vw;
+    max-width: 99vw;
+    padding: 8px 2px 12px 2px;
+    margin: 48px auto 12px auto;
+  }
+  .form-title {
+    font-size: 1.1rem;
+  }
+  .form-input {
+    font-size: 0.95rem;
+    padding: 8px 12px;
+    height: 38px;
+  }
+  .form-button {
+    font-size: 0.95rem;
+    height: 36px;
+  }
 }
 
 
