@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar } from "../Components/Navbar.js"
-import Webcam from "react-webcam"
+import { Camera } from "react-camera-pro"
 import { useRef, useState, useEffect } from "react"
 import { createWorker } from "tesseract.js"
 import "../AddVisitor.css"
@@ -9,18 +9,18 @@ const API_BASE_URL = process.env.NODE_ENV === "development" ? "http://localhost:
 
 export const AddVisitors = () => {
 
-   const webcamRef = useRef(null)
+   const cameraRef = useRef(null)
    const [image, setImage] = useState("")
    const [toggleImageVerify, setToggleImageVerify] = useState(false)
    const [showWebcam, setShowWebcam] = useState(true)
    const [formToggle, setFormToggle] = useState(false)
 
    const capture = React.useCallback(() => {
-      const img = webcamRef.current.getScreenshot()
+      const img = cameraRef.current.takePhoto()
       setImage(img)
       setShowWebcam(false)
       setToggleImageVerify(true)
-   }, [webcamRef])
+   }, [cameraRef])
 
    const resetToggle = () => {
       setToggleImageVerify(false)
@@ -47,21 +47,14 @@ export const AddVisitors = () => {
       )
    }
 
-   const videoConstraintOptions = {
-      facingMode: process.env.NODE_ENV === "production" ? "environment" : "user"
-   };
-
    return (
         <div>
             {showWebcam ? 
-               <div>
-                 <Webcam
-                  ref={webcamRef}
-                  height={450}
+               <div class="camera-container">
+                  <Camera
+                  ref={cameraRef}
                   screenshotFormat="image/jpeg"
-                  width={1050}
-                  class="webcam"
-                  videoConstraints={videoConstraintOptions}
+                  facingMode="environment"
                   />
                  <button id="take-photo-button" onClick={capture}>Take Photo</button>
                </div>
