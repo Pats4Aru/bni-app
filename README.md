@@ -3,4 +3,4 @@
 - Members can also search for other members by name using the search filter.
 
 - PWA App is deployed at the following url - https://bni-app.onrender.com/.
-- To download via IOS/Android. Open the application via the deployment link above. Then, click the three dots and click add to home screen. This will add the application as an actual application to your mobile home screen. 
+- To download via IOS/Android. Open the application via the deployment link above. Then, click the upload icon in the top right and click add to home screen. This will add the application as an actual application to your mobile home screen. 
