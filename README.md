@@ -11,7 +11,7 @@ Design Decisions
 - Decided on MongoDB for the database due to the lack of relational data, and also for its simplicity when it comes to making queries. Also, has in built scaling options to account for larger amounts of data and web traffic. 
 - Picked OpenAI model 3.5 turbo for extraction of relevant keywords, due to its cheap cost, and ability to extract relevant keywords effectivly for given text. I tested, OpenAI 3.5 turbo with many different types of text body's and testing among all of them its ability to extract the name, phone, email, and company of a user. The model performed well with 95% accuracy, which gave me confidence that it could be a cheap but also effective option.
 
-- Tests ran with ChatGPT 3.5 Turbo model
+Tests ran with ChatGPT 3.5 Turbo model
 
 - "" (empty body of text) -> ,,,, (expected result)
 - "Arunav Perumandla \n randomCompany \n arunavp05@hotmail.com 919-555-5555" -> Arunav Perumandla, randomCompany, arunavp05@hotmail.com, 919-555-5555 (expected result)
