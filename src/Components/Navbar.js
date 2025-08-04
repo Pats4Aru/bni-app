@@ -5,8 +5,8 @@ export const Navbar = () => {
     const pages = ["Members", "Visitors", "Add a Visitor"];
  
     return (
-       <div class="navbar">
-          <ul class="pageList">
+       <div className="navbar">
+          <ul className="pageList">
           {pages.map((page) =>
              <li><Link to={`/${page === "Add a Visitor" ? "AddVisitors" : page}`} 
                         class="pageLink">{page}

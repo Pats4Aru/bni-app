@@ -95,9 +95,9 @@ app.post("/visitor-search", async (req, res) => {
       const visitorsCollection = client.db("BNI-USERS").collection("Visitors")
       const searchWord = req.body.searchWord;
       const visitorQuery = searchWord === "" ? {} : {"Name": searchWord}
-      const visitorQueryResult = await visitorsCollection.find(visitorQuery).toArray()
-      res.json(visitorQueryResult);
-      console.log(visitors)
+      const visitorQueryData = await visitorsCollection.find(visitorQuery).toArray()
+      const resultJSON = {visitorQueryResult: visitorQueryData}
+      res.json(resultJSON);
    }
    catch (error) {
       console.error("Error fetching visitors:", error)

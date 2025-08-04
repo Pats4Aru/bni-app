@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useLocation } from "react-router-dom";
 import "../User.css";
 import { Navbar } from "../Components/Navbar.js";
@@ -6,7 +6,7 @@ import { Navbar } from "../Components/Navbar.js";
 
 export const User = () => {
     const location = useLocation();
-    const data = location.state;
+    const data = location.state || {};
     return (
         <div class="profile-card">
             <Navbar />
@@ -19,12 +19,12 @@ export const User = () => {
             </path>
                 </svg>
             </div>
-            <h4>Name: {data.Name}</h4>
-            {data.Profession != undefined ? <h4>Profession: {data.Profession}</h4> : <></>}
-            <h4>Company: {data.Company}</h4>
-            <h4>Email: {data.Email}</h4>
-            <h4>Phone: {data.Phone}</h4>
-            {data.Referrer != undefined ? <h4>Referrer: {data.Referrer}</h4> : <></>}
+            <h4>Name: {data.Name || "Unknown"}</h4>
+            {data.Profession != undefined ? <h4>Profession: {data.Profession || "Unknown"}</h4> : <></>}
+            <h4>Company: {data.Company || "Unknown"}</h4>
+            <h4>Email: {data.Email || "Unknown"}</h4>
+            <h4>Phone: {data.Phone || "Unknown"}</h4>
+            {data.Referrer != undefined ? <h4>Referrer: {data.Referrer || "Unknown"}</h4> : <></>}
         </div>
     )
 }

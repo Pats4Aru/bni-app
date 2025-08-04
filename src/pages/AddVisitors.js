@@ -114,7 +114,7 @@ const GenerateForm = ({resetToWebcam, imgURL}) => {
                   <label>Company:</label>
                   <input type="text" required class="form-input" value={company} onChange={(e) => {setCompany(e.target.value)}}></input><br/>
                   <label>Email:</label>
-                  <input type="text" class="form-input" value={email} onChange={(e) => {setEmail(e.target.value)}}></input><br/>
+                  <input type="text" required class="form-input" value={email} onChange={(e) => {setEmail(e.target.value)}}></input><br/>
                   <label>Phone:</label>
                   <input type="text" required class="form-input" value={phone} onChange={(e) => {setPhone(e.target.value)}}></input><br/>
                   <label>Referrer:</label>

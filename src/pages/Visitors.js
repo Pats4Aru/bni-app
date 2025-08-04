@@ -21,11 +21,11 @@ export const Visitors = () => {
             })
         })
         .then((response) => {
+            console.log(response);
             return response.json();
         })
         .then((visitorData) => {
-            console.log(visitorData);
-            setVisitors(visitorData)
+            setVisitors(visitorData.visitorQueryResult)
         })
         .catch(err => console.log(err))
     }, [searchKeyword])
@@ -45,7 +45,7 @@ export const Visitors = () => {
                 </thead>
                 <tbody>
                     {visitors.map((visitor) => 
-                        <tr class="active-row">
+                        <tr class="active-row" key={visitor.id}>
                             <td key={visitor.id}>
                                 <Link class="userLink" to="/Visitors/user" state={visitor}>
                                 {visitor.Name}

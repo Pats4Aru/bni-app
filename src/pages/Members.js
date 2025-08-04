@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Link } from "react-router-dom";
 import { Navbar } from "../Components/Navbar.js";
 import { useState, useEffect, useRef } from "react"; 
@@ -6,13 +6,15 @@ import { useState, useEffect, useRef } from "react";
 export const Members = () => {
     return (
        <div>
-          <MembersTable/>
-          <Navbar />
+         <MembersTable/> 
+         <Navbar /> 
        </div>
     )
 }
 
 function MembersTable() {  
+
+   console.log("Members Table component is mounting")
 
    const API_BASE_URL = process.env.NODE_ENV === "development" ? "http://localhost:3002" : "https://bni-web-app.onrender.com"
    const [currentMembers, setCurrentMembers] = useState([]);
@@ -76,7 +78,6 @@ function MembersTable() {
             setEndPage(newNumPages < 5 ? newNumPages + 1 : 6);
             prevSearchKeyword.current = searchKeyword;
          }
-         
       })
       .catch(err => console.log(err))
    }, [currentPage, searchKeyword]);
@@ -96,14 +97,14 @@ function MembersTable() {
                </thead>
                <tbody>
                   {currentMembers.map((user) =>
-                        <tr class="active-row">
-                           <td key={user.id}>
-                              <Link class="userLink" to="/Members/user" state={user} >
+                        <tr class="active-row" key={user.id}>
+                           <td>
+                              <Link className="userLink" to="/Members/user" state={user} >
                               {user.Name}
                               </Link>
                            </td>
-                           <td key={user.id}>{user.Profession}</td>
-                           <td key={user.id}>{user.Company}</td>
+                           <td>{user.Profession}</td>
+                           <td>{user.Company}</td>
                         </tr>
                   )}
                </tbody>
@@ -119,3 +120,4 @@ function MembersTable() {
       )
    }
 
+export default MembersTable;

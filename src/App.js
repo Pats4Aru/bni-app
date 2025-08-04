@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css';
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {Routes, Route, BrowserRouter} from "react-router-dom";
 import { Home } from './pages/Home.js';
 import { Visitors } from "./pages/Visitors.js";
 import { Members } from "./pages/Members.js";
@@ -10,7 +10,7 @@ import { AddVisitors } from "./pages/AddVisitors.js";
 function App() {
 
    return (
-      <Router>
+      <BrowserRouter>
          <Routes>
             <Route path="/Members" element={<Members/>}/>
             <Route path="/" element={<Home/>}/>
@@ -20,7 +20,7 @@ function App() {
             <Route path="/AddVisitors" element={<AddVisitors/>}/>
             <Route path="*" element={<div>This Page doesen't exist</div>}/>
          </Routes>
-      </Router>
+      </BrowserRouter>
    )
    
 }
