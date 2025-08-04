@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar } from "../Components/Navbar.js"
 import { Camera } from "react-camera-pro"
-import { useRef, useState, useEffect } from "react"
+import { useRef, useState, useEffect, useCallback } from "react"
 import { createWorker } from "tesseract.js"
 import "../AddVisitor.css"
 
@@ -15,7 +15,7 @@ export const AddVisitors = () => {
    const [showWebcam, setShowWebcam] = useState(true)
    const [formToggle, setFormToggle] = useState(false)
 
-   const capture = React.useCallback(() => {
+   const capture = useCallback(() => {
       const img = cameraRef.current.takePhoto()
       setImage(img)
       setShowWebcam(false)

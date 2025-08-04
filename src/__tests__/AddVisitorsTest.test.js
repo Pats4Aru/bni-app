@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { AddVisitors } from '../pages/AddVisitors.js';
@@ -119,13 +119,13 @@ describe('GenerateForm Component', () => {
   });
 
   const GenerateForm = ({resetToWebcam, imgURL}) => {
-    const [name, setName] = React.useState("");
-    const [company, setCompany] = React.useState("");
-    const [email, setEmail] = React.useState("");
-    const [phone, setPhone] = React.useState("");
-    const [referrer, setReferrer] = React.useState("");
+    const [name, setName] = useState("");
+    const [company, setCompany] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [referrer, setReferrer] = useState("");
 
-    React.useEffect(() => {
+    useEffect(() => {
       // Simulate OCR processing
       setName('John Doe');
       setCompany('Tech Corp');

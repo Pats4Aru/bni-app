@@ -1,39 +1,18 @@
-import { resolve } from 'path';
-import crypto from 'crypto-browserify';
-import stream from 'stream-browserify';
-import timers from 'timers-browserify';
-import vm from 'vm-browserify';
-import zlib from 'browserify-zlib';
-import assert from 'assert';
-import buffer from 'buffer';
-import os from 'os-browserify/browser.js';
-import path from 'path-browserify';
+import module from 'module'
 
-export default function override(config) {
+module.exports = function override(config) {
    
    config.resolve.fallback = {
-      crypto,
-      stream,
-      timers,
-      fs: false,
-      vm,
-      zlib,
-      assert,
-      buffer,
-      os,
-      path,
+         "crypto": require.resolve("crypto-browserify"),
+         "stream" : require.resolve("stream-browserify"),
+         "timers": require.resolve("timers-browserify"),
+         fs: false,
+         "vm": require.resolve("vm-browserify"),
+         "zlib": require.resolve("browserify-zlib"),
+         "assert": require.resolve("assert/"),
+         "buffer": require.resolve("buffer"),
+         "os": require.resolve("os-browserify/browser"),
+         "path": require.resolve("path-browserify"),
    }
-
-   // configuration for jest testing 
-   config.jest = (jestConfig) => {
-    jestConfig.moduleNameMapper = {
-      ...jestConfig.moduleNameMapper,
-      '^react-router-dom$': '<rootDir>/node_modules/react-router-dom',
-    };
-    jestConfig.moduleDirectories = ['node_modules'];
-    return jestConfig;
-  };
-
    return config
 }
-
