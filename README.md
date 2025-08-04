@@ -13,11 +13,11 @@ Design Decisions
 
 - Tests ran with ChatGPT 3.5 Turbo model
 
-"" (empty body of text) -> ,,,, (expected result)
-"Arunav Perumandla \n randomCompany \n arunavp05@hotmail.com 919-555-5555" -> Arunav Perumandla, randomCompany, arunavp05@hotmail.com, 919-555-5555 (expected result)
-"Arunav Perumandla arunavp05@hotmail.com 919-555-5555" -> Arunav Perumandla,, arunavp05@hotmail.com, 919-555-5555 (expected result)
-"Arunav Perumandla  919-555-5555" -> Arunav Perumandla,,,919-555-5555 (expected result)
-"randomCompany \n arunavp05@hotmail.com 919-555-5555" -> ,randomCompany,arunavp05@hotmail.com,919-555-5555 (expected result)
-"Arunav Perumandla \n arperuma@ncsu.edu \n arunavpm6@gmail.com \n HelloWorld" -> Arunav Perumandla,HelloWorld,arperuma@ncsu.edu, (failed test)
+- "" (empty body of text) -> ,,,, (expected result)
+- "Arunav Perumandla \n randomCompany \n arunavp05@hotmail.com 919-555-5555" -> Arunav Perumandla, randomCompany, arunavp05@hotmail.com, 919-555-5555 (expected result)
+- "Arunav Perumandla arunavp05@hotmail.com 919-555-5555" -> Arunav Perumandla,, arunavp05@hotmail.com, 919-555-5555 (expected result)
+- "Arunav Perumandla  919-555-5555" -> Arunav Perumandla,,,919-555-5555 (expected result)
+- "randomCompany \n arunavp05@hotmail.com 919-555-5555" -> ,randomCompany,arunavp05@hotmail.com,919-555-5555 (expected result)
+- "Arunav Perumandla \n arperuma@ncsu.edu \n arunavpm6@gmail.com \n HelloWorld" -> Arunav Perumandla,HelloWorld,arperuma@ncsu.edu, (failed test)
 
 - In the case of the failing tests, it seemed that the model did struggle with processing words, that fit under multiple categories. Luckily, the application allows for the user to validate the information extracted to ensure that the correct information is displayed in the Visitors Table. 
