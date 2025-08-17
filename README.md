@@ -1,4 +1,4 @@
-Features
+**Features**
 
 Member Directory – Members can log in and view information about other members in the Business Network.
 
@@ -6,11 +6,11 @@ Visitor Management – Add visitors by scanning their business cards. The app us
 
 Search Functionality – Search for members by name using a built-in search filter.
 
-Deployment
+**Deployment**
 
 The app is deployed at: https://bni-app.onrender.com/
 
-Installation (PWA on iOS/Android)
+**Installation (PWA on iOS/Android)**
 
 1. Open the deployment link above in your mobile browser.
 
@@ -20,13 +20,13 @@ Installation (PWA on iOS/Android)
 
 4. The app will now appear on your home screen like a native app.
 
-Design Decisions
+**Design Decisions**
 
 OCR (Tesseract.js) – Chosen for native JavaScript support (works seamlessly with React) and reliable text extraction from varied sources.
 
 Database (MongoDB) – Selected for handling unstructured and semi-structured data efficiently.
 
-Testing (Keyword Extraction with GPT-3.5 Turbo)
+**Testing (Keyword Extraction with GPT-3.5 Turbo)**
 Input Text	Expected Output	Result
 ""	,,,	✅
 Arunav Perumandla \n randomCompany \n arunavp05@hotmail.com 919-555-5555	Arunav Perumandla, randomCompany, arunavp05@hotmail.com, 919-555-5555	✅
